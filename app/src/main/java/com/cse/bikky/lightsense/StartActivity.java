@@ -15,16 +15,16 @@ public class StartActivity extends AppCompatActivity implements SensorEventListe
 
 
     private TextView data;
+    private TextView v;
     private Sensor mySense;
     private SensorManager SM;
-
+    public int v2;
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        data.setText("L: " + event.values[0]+ " lx");
-        float values = event.values[0];
-
-
+        data.setText("L: " + (int)event.values[0]+ " lx");
+        v2=(int)event.values[0];
+        //v.setText("Hello"+v2);
     }
 
     @Override
@@ -49,5 +49,8 @@ public class StartActivity extends AppCompatActivity implements SensorEventListe
         //Assign TextView
         data = (TextView) findViewById(R.id.textView3);
 
+        v = (TextView) findViewById(R.id.textView2);
+
     }
+
 }
